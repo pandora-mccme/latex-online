@@ -24,6 +24,4 @@ RUN apt-get clean && apt-get update && apt-get install -y git-core nodejs npm &&
 COPY ./util/docker-entrypoint.sh /
 
 EXPOSE 2700
-WORKDIR /
-CMD ["./docker-entrypoint.sh"]
-
+CMD ["/docker-entrypoint.sh"]
