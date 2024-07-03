@@ -18,7 +18,9 @@ RUN apt-get update && \
     update-ca-certificates
 
 # Install git & Node.JS
-RUN apt-get clean && apt-get update && apt-get install -y git-core nodejs npm && \
+RUN apt-get clean && apt-get update && apt-get install -y \
+    git-core nodejs npm \
+    libarchive-tools && \
     rm -rf /var/lib/apt/lists/*
 
 COPY ./util/docker-entrypoint.sh /
